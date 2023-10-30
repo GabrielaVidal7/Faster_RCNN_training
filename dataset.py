@@ -68,7 +68,7 @@ class CustomDataset(Dataset):
         image_height = image.shape[0]
         self.width = image_width
         self.height = image_height
-        print("image hight: "+"{}".format(image_height))
+        # print("image hight: "+"{}".format(image_height))
         # convert BGR to RGB color format
         image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB).astype(np.float32)
         # image_resized = cv2.resize(image, (self.width, self.height))
@@ -108,7 +108,7 @@ class CustomDataset(Dataset):
             ymax_final = (ymax/image_height)*self.height
 
             if xmin_final<0 or xmax_final>640 or ymin_final<0 or ymax_final>512:
-                print("Imagem: "+"{}".format(image_name)+" | xmin: "+"{}".format(xmin_final)+" | xmax: "+"{}".format(xmax_final))
+                print("Imagem: "+"{}".format(image_name)+" | xmin: "+"{}".format(xmin_final)+" | xmax: "+"{}".format(xmax_final)+" | ymin: "+"{}".format(ymin_final)+" | ymax: "+"{}".format(ymax_final))
             
             boxes.append([xmin_final, ymin_final, xmax_final, ymax_final])
         
