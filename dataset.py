@@ -107,9 +107,8 @@ class CustomDataset(Dataset):
             ymin_final = (ymin/image_height)*self.height
             ymax_final = (ymax/image_height)*self.height
 
-            if xmin_final<0 or xmax_final>512 or ymin_final<0 or ymax_final>640:
+            if xmin_final<0 or xmax_final>640 or ymin_final<0 or ymax_final>512:
                 print("Imagem: "+"{}".format(image_name)+" | xmin: "+"{}".format(xmin_final)+" | xmax: "+"{}".format(xmax_final))
-                return 0, 0
             
             boxes.append([xmin_final, ymin_final, xmax_final, ymax_final])
         
