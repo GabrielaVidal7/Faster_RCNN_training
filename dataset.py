@@ -37,7 +37,6 @@ class CustomDataset(Dataset):
         self.read_and_clean()
         self.all_images = [image_path.split(os.path.sep)[-1] for image_path in self.all_image_paths]
         self.all_images = sorted(self.all_images)
-        print("Image files: "+"{}".format(self.all_image_paths))
         
     def read_and_clean(self):
         """
@@ -146,13 +145,13 @@ class CustomDataset(Dataset):
 def create_train_dataset():
     train_dataset = CustomDataset(
         TRAIN_DIR_IMAGES, TRAIN_DIR_LABELS,
-        RESIZE_TO, RESIZE_TO, CLASSES, get_train_transform()
+        640, 512, CLASSES, get_train_transform()
     )
     return train_dataset
 def create_valid_dataset():
     valid_dataset = CustomDataset(
         VALID_DIR_IMAGES, VALID_DIR_LABELS, 
-        RESIZE_TO, RESIZE_TO, CLASSES, get_valid_transform()
+        640, 512, CLASSES, get_valid_transform()
     )
     return valid_dataset
 
