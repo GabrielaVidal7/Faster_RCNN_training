@@ -33,6 +33,8 @@ class CustomDataset(Dataset):
         for file_type in self.image_file_types:
             self.all_image_paths.extend(glob.glob(f"{self.images_path}/{file_type}"))
         self.all_annot_paths = glob.glob(f"{self.labels_path}/*.xml")
+        print("IMAGES FILE: "+"{}".format(self.all_image_paths))
+        print("ANNOTATION FILES: "+"{}".format(self.all_annot_paths))
         # Remove all annotations and images when no object is present.
         self.read_and_clean()
         self.all_images = [image_path.split(os.path.sep)[-1] for image_path in self.all_image_paths]
