@@ -66,14 +66,14 @@ class CustomDataset(Dataset):
         # get the height and width of the image
         image_width = image.shape[1]
         image_height = image.shape[0]
-        self.width = image_width
-        self.height = image_height
         print("image hight: "+"{}".format(image_height))
         # convert BGR to RGB color format
         image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB).astype(np.float32)
-        # image_resized = cv2.resize(image, (self.width, self.height))
-        # image_resized /= 255.0
-        image_resized = image
+        if image_width != self.width:
+            image_resized = cv2.resize(image, (self.width, self.height))
+            image_resized /= 255.0
+        else:
+            image_resized = image
         
         # capture the corresponding XML file for getting the annotations
         annot_filename = image_name[:-4] + '.xml'
