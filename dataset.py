@@ -37,6 +37,7 @@ class CustomDataset(Dataset):
         self.read_and_clean()
         self.all_images = [image_path.split(os.path.sep)[-1] for image_path in self.all_image_paths]
         self.all_images = sorted(self.all_images)
+        print("Image files: "+"{}".format(self.all_image_paths))
         
     def read_and_clean(self):
         """
@@ -100,6 +101,10 @@ class CustomDataset(Dataset):
             xmax_final = (xmax/image_width)*self.width
             ymin_final = (ymin/image_height)*self.height
             ymax_final = (ymax/image_height)*self.height
+
+            if xmin_final<0 or xmax_final>1:
+                print("Imagem: "+"{}".format(image_name)+" | xmin: "+"{}".format(xmin_final)+" | xmax: "+"{}".format(xmax_final))
+                return 0, 0
             
             boxes.append([xmin_final, ymin_final, xmax_final, ymax_final])
         
