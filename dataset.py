@@ -37,6 +37,7 @@ class CustomDataset(Dataset):
         self.read_and_clean()
         self.all_images = [image_path.split(os.path.sep)[-1] for image_path in self.all_image_paths]
         self.all_images = sorted(self.all_images)
+        print("Image files: "+"{}".format(self.all_image_paths))
         
     def read_and_clean(self):
         """
