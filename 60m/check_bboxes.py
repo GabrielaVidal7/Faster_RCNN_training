@@ -1,8 +1,8 @@
 import glob as glob
 from xml.etree import ElementTree as et
 
-images_path = 'images/test'
-labels_path = 'images/test'
+images_path = 'train'
+labels_path = 'train'
 # get all the image paths in sorted order
 image_file_types = ['*.jpg', '*.jpeg', '*.png', '*.ppm']
 all_image_paths = []

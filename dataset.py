@@ -70,6 +70,7 @@ class CustomDataset(Dataset):
         # convert BGR to RGB color format
         image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB).astype(np.float32)
         if image_width != self.width:
+            print("Image width: "+"{}".format(image_width)+" | Desired width: "+"{}".format(self.width))
             image_resized = cv2.resize(image, (self.width, self.height))
             image_resized /= 255.0
         else:
@@ -99,14 +100,20 @@ class CustomDataset(Dataset):
             # ymax = right corner y-coordinates
             ymax = int(member.find('bndbox').find('ymax').text)
             
-            # resize the bounding boxes according to the...
-            # ... desired `width`, `height`
-            xmin_final = (xmin/image_width)*self.width
-            xmax_final = (xmax/image_width)*self.width
-            ymin_final = (ymin/image_height)*self.height
-            ymax_final = (ymax/image_height)*self.height
+            if self.width != image_width:
+                # resize the bounding boxes according to the...
+                # ... desired `width`, `height`
+                xmin_final = (xmin/image_width)*self.width
+                xmax_final = (xmax/image_width)*self.width
+                ymin_final = (ymin/image_height)*self.height
+                ymax_final = (ymax/image_height)*self.height
+            else:
+                xmin_final = xmin
+                xmax_final = xmax
+                ymin_final = ymin
+                ymax_final = ymax
 
-            if xmin_final<=0 or xmax_final>640 or ymin_final<=0 or ymax_final>512:
+            if xmin_final<0 or xmax_final>640 or ymin_final<0 or ymax_final>512:
                 print("Imagem: "+"{}".format(image_name)+" | xmin: "+"{}".format(xmin_final)+" | xmax: "+"{}".format(xmax_final)+" | ymin: "+"{}".format(ymin_final)+" | ymax: "+"{}".format(ymax_final))
             
             boxes.append([xmin_final, ymin_final, xmax_final, ymax_final])
