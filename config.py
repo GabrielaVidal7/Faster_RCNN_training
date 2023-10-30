@@ -18,4 +18,4 @@ NUM_CLASSES = len(CLASSES)
 # whether to visualize images after creating the data loaders
 VISUALIZE_TRANSFORMED_IMAGES = False
 # location to save model and plots
-OUT_DIR = '../outputs'
+OUT_DIR = 'outputs'
