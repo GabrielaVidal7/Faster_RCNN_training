@@ -6,10 +6,8 @@ NUM_WORKERS = 4
 DEVICE = torch.device('cuda') if torch.cuda.is_available() else torch.device('cpu')
   
 # Images and labels direcotry should be relative to train.py
-TRAIN_DIR_IMAGES = 'dataset/train'
-TRAIN_DIR_LABELS = 'dataset/train'
-VALID_DIR_IMAGES = 'dataset/test'
-VALID_DIR_LABELS = 'dataset/test'
+TRAIN_DIR = 'dataset/train'
+VALID_DIR = 'dataset/test'
 # classes: 0 index is reserved for background
 CLASSES = [
     'car', 'person', 'motorcycle', 'truck', 'animal'
