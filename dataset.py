@@ -70,9 +70,10 @@ class CustomDataset(Dataset):
         # convert BGR to RGB color format
         image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB).astype(np.float32)
         if image_width != self.width:
-            print("Image width: "+"{}".format(image_width)+" | Desired width: "+"{}".format(self.width))
+            print("Image:"+"{}".format(image_name)+" | Image width: "+"{}".format(image_width)+" | Desired width: "+"{}".format(self.width))
             image_resized = cv2.resize(image, (self.width, self.height))
             image_resized /= 255.0
+            print(image_resized.shape[1])
         else:
             image_resized = image
         
@@ -103,6 +104,7 @@ class CustomDataset(Dataset):
             if self.width != image_width:
                 # resize the bounding boxes according to the...
                 # ... desired `width`, `height`
+                print("{}".format(image_name)+"Not the same width")
                 xmin_final = (xmin/image_width)*self.width
                 xmax_final = (xmax/image_width)*self.width
                 ymin_final = (ymin/image_height)*self.height
