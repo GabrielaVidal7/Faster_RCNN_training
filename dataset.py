@@ -101,21 +101,17 @@ class CustomDataset(Dataset):
             # ymax = right corner y-coordinates
             ymax = int(member.find('bndbox').find('ymax').text)
             
-            if self.width != image_width:
-                # resize the bounding boxes according to the...
-                # ... desired `width`, `height`
-                print("{}".format(image_name)+"Not the same width")
-                xmin_final = (xmin/image_width)*self.width
-                xmax_final = (xmax/image_width)*self.width
-                ymin_final = (ymin/image_height)*self.height
-                ymax_final = (ymax/image_height)*self.height
-            else:
-                xmin_final = xmin
-                xmax_final = xmax
-                ymin_final = ymin
-                ymax_final = ymax
+            # resize the bounding boxes according to the...
+            # ... desired `width`, `height`
+            # print("{}".format(image_name)+"Not the same width")
+            xmin_final = xmin
+            xmax_final = xmax
+            ymin_final = ymin
+            ymax_final = ymax
+
 
             if xmin_final<0 or xmax_final>640 or ymin_final<0 or ymax_final>512:
+                print("Imagem: "+"{}".format(image_name)+" | xmin: "+"{}".format(xmin)+" | xmax: "+"{}".format(xmax)+" | ymin: "+"{}".format(ymin)+" | ymax: "+"{}".format(ymax))
                 print("Imagem: "+"{}".format(image_name)+" | xmin: "+"{}".format(xmin_final)+" | xmax: "+"{}".format(xmax_final)+" | ymin: "+"{}".format(ymin_final)+" | ymax: "+"{}".format(ymax_final))
             
             boxes.append([xmin_final, ymin_final, xmax_final, ymax_final])

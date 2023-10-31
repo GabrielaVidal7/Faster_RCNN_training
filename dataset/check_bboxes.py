@@ -1,8 +1,8 @@
 import glob as glob
 from xml.etree import ElementTree as et
 
-images_path = 'train'
-labels_path = 'train'
+images_path = 'images/test'
+labels_path = 'images/test'
 # get all the image paths in sorted order
 image_file_types = ['*.jpg', '*.jpeg', '*.png', '*.ppm']
 all_image_paths = []
@@ -29,3 +29,9 @@ for image_name in all_annot_paths:
         if xmin<0 or xmax>640 or ymin<0 or ymax>512:
             print("Imagem: "+"{}".format(image_name)+" | xmin: "+"{}".format(xmin)+" | xmax: "+"{}".format(xmax)+" | ymin: "+"{}".format(ymin)+" | ymax: "+"{}".format(ymax))
         
+            xmin_final = (xmin/1280)*640
+            xmax_final = (xmax/1280)*640
+            ymin_final = (ymin/1024)*512
+            ymax_final = (ymax/1024)*512
+
+            print("xmin: "+"{}".format(xmin_final)+" | ymin: "+"{}".format(ymin_final)+" | xmax: "+"{}".format(xmax_final)+" | ymax: "+"{}".format(ymax_final))

@@ -1,61 +1,13 @@
 <annotation>
   <folder>VOC2007</folder>
-  <filename>19.jpg</filename>
+  <filename>191.jpg</filename>
   <source>
     <database>Coco database</database>
   </source>
   <size>
-    <width>1280</width>
-    <height>1024</height>
+    <width>640</width>
+    <height>512</height>
     <depth>3</depth>
   </size>
   <segmented>0</segmented>
-  <object>
-    <name>person</name>
-    <pose>Unspecified</pose>
-    <truncated>0</truncated>
-    <difficult>0</difficult>
-    <bndbox>
-      <xmin>1016</xmin>
-      <ymin>766</ymin>
-      <xmax>1045</xmax>
-      <ymax>785</ymax>
-    </bndbox>
-  </object>
-  <object>
-    <name>person</name>
-    <pose>Unspecified</pose>
-    <truncated>0</truncated>
-    <difficult>0</difficult>
-    <bndbox>
-      <xmin>1017</xmin>
-      <ymin>749</ymin>
-      <xmax>1041</xmax>
-      <ymax>769</ymax>
-    </bndbox>
-  </object>
-  <object>
-    <name>car</name>
-    <pose>Unspecified</pose>
-    <truncated>0</truncated>
-    <difficult>0</difficult>
-    <bndbox>
-      <xmin>984</xmin>
-      <ymin>926</ymin>
-      <xmax>1046</xmax>
-      <ymax>1017</ymax>
-    </bndbox>
-  </object>
-  <object>
-    <name>car</name>
-    <pose>Unspecified</pose>
-    <truncated>0</truncated>
-    <difficult>0</difficult>
-    <bndbox>
-      <xmin>1005</xmin>
-      <ymin>796</ymin>
-      <xmax>1054</xmax>
-      <ymax>896</ymax>
-    </bndbox>
-  </object>
 </annotation>

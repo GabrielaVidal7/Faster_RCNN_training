@@ -1,6 +1,6 @@
 <annotation>
   <folder>VOC2007</folder>
-  <filename>313.jpg</filename>
+  <filename>315.jpg</filename>
   <source>
     <database>Coco database</database>
   </source>
@@ -10,52 +10,4 @@
     <depth>3</depth>
   </size>
   <segmented>0</segmented>
-  <object>
-    <name>person</name>
-    <pose>Unspecified</pose>
-    <truncated>0</truncated>
-    <difficult>0</difficult>
-    <bndbox>
-      <xmin>323</xmin>
-      <ymin>106</ymin>
-      <xmax>333</xmax>
-      <ymax>125</ymax>
-    </bndbox>
-  </object>
-  <object>
-    <name>person</name>
-    <pose>Unspecified</pose>
-    <truncated>0</truncated>
-    <difficult>0</difficult>
-    <bndbox>
-      <xmin>313</xmin>
-      <ymin>96</ymin>
-      <xmax>323</xmax>
-      <ymax>116</ymax>
-    </bndbox>
-  </object>
-  <object>
-    <name>person</name>
-    <pose>Unspecified</pose>
-    <truncated>0</truncated>
-    <difficult>0</difficult>
-    <bndbox>
-      <xmin>305</xmin>
-      <ymin>107</ymin>
-      <xmax>314</xmax>
-      <ymax>127</ymax>
-    </bndbox>
-  </object>
-  <object>
-    <name>person</name>
-    <pose>Unspecified</pose>
-    <truncated>0</truncated>
-    <difficult>0</difficult>
-    <bndbox>
-      <xmin>299</xmin>
-      <ymin>103</ymin>
-      <xmax>310</xmax>
-      <ymax>123</ymax>
-    </bndbox>
-  </object>
 </annotation>

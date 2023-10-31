@@ -5,8 +5,8 @@
     <database>Coco database</database>
   </source>
   <size>
-    <width>1280</width>
-    <height>1024</height>
+    <width>640</width>
+    <height>512</height>
     <depth>3</depth>
   </size>
   <segmented>0</segmented>
@@ -16,10 +16,10 @@
     <truncated>0</truncated>
     <difficult>0</difficult>
     <bndbox>
-      <xmin>818</xmin>
-      <ymin>589</ymin>
-      <xmax>837</xmax>
-      <ymax>615</ymax>
+      <xmin>409</xmin>
+      <ymin>294</ymin>
+      <xmax>418</xmax>
+      <ymax>307</ymax>
     </bndbox>
   </object>
   <object>
@@ -28,10 +28,10 @@
     <truncated>0</truncated>
     <difficult>0</difficult>
     <bndbox>
-      <xmin>800</xmin>
-      <ymin>610</ymin>
-      <xmax>820</xmax>
-      <ymax>626</ymax>
+      <xmin>400</xmin>
+      <ymin>305</ymin>
+      <xmax>410</xmax>
+      <ymax>313</ymax>
     </bndbox>
   </object>
   <object>
@@ -40,10 +40,10 @@
     <truncated>0</truncated>
     <difficult>0</difficult>
     <bndbox>
-      <xmin>817</xmin>
-      <ymin>624</ymin>
-      <xmax>931</xmax>
-      <ymax>709</ymax>
+      <xmin>408</xmin>
+      <ymin>312</ymin>
+      <xmax>465</xmax>
+      <ymax>354</ymax>
     </bndbox>
   </object>
   <object>
@@ -52,10 +52,10 @@
     <truncated>0</truncated>
     <difficult>0</difficult>
     <bndbox>
-      <xmin>808</xmin>
-      <ymin>571</ymin>
-      <xmax>829</xmax>
-      <ymax>594</ymax>
+      <xmin>404</xmin>
+      <ymin>285</ymin>
+      <xmax>414</xmax>
+      <ymax>297</ymax>
     </bndbox>
   </object>
   <object>
@@ -64,10 +64,10 @@
     <truncated>0</truncated>
     <difficult>0</difficult>
     <bndbox>
-      <xmin>781</xmin>
-      <ymin>591</ymin>
-      <xmax>802</xmax>
-      <ymax>611</ymax>
+      <xmin>390</xmin>
+      <ymin>295</ymin>
+      <xmax>401</xmax>
+      <ymax>305</ymax>
     </bndbox>
   </object>
 </annotation>
