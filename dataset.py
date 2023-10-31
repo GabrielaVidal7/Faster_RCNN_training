@@ -190,7 +190,7 @@ def create_valid_loader(valid_dataset, num_workers=0):
 if __name__ == '__main__':
     # sanity check of the Dataset pipeline with sample visualization
     dataset = CustomDataset(
-        TRAIN_DIR_IMAGES, RESIZE_TO, RESIZE_TO, CLASSES
+        TRAIN_DIR_IMAGES, 640, 512, CLASSES
     )
     print(f"Number of training images: {len(dataset)}")
     
