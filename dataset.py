@@ -115,9 +115,15 @@ class CustomDataset(Dataset):
                 print("Imagem: "+"{}".format(image_name)+" | xmin: "+"{}".format(xmin_final)+" | xmax: "+"{}".format(xmax_final)+" | ymin: "+"{}".format(ymin_final)+" | ymax: "+"{}".format(ymax_final))
             
             boxes.append([xmin_final, ymin_final, xmax_final, ymax_final])
+
+        if not np.array(boxes).size:
+            boxes.append([0, 0, 0, 0])
         
         # bounding box to tensor
         boxes = torch.as_tensor(boxes, dtype=torch.float32)
+
+        # if boxes.nelement() == 0:
+        #     boxes.append([0, 0, 0, 0])
         # area of the bounding boxes
         area = (boxes[:, 3] - boxes[:, 1]) * (boxes[:, 2] - boxes[:, 0])
         # no crowd instances
